@@ -1,0 +1,24 @@
+<html>
+<body>
+<script>
+function search(inputtxt){
+var a=document.getElementById("t1").value;
+//function CheckPassword(inputtxt) 
+//{ 
+var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+if(inputtxt.value.match(passw)) 
+{ 
+alert("Correct");
+return true;
+}
+else
+{ 
+alert('Wrong...!');
+return false;
+}
+}
+</script>
+ENTER PWD<input type="text" id="t1"><br>
+<input type="button" value="OK" onClick="search(document.t1)">
+</body>
+</html>
