@@ -1,0 +1,39 @@
+FROM lean AS dev
+
+USER root
+
+# Install dependencies
+RUN apk add --no-cache \
+    nss \
+    dbus-glib \
+    gtk+3.0 \
+    libx11 \
+    alsa-lib \
+    libxtst \
+    git \
+    pkgconf \
+    wget \
+    bzip2
+
+# Install Playwright
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install playwright
+RUN playwright install-deps
+RUN playwright install chromium
+
+# Install GeckoDriver WebDriver & Firefox
+ARG GECKODRIVER_VERSION=v0.34.0 \
+    FIREFOX_VERSION=125.0.3
+
+RUN wget -q https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz -O - | tar xfz - -C /usr/local/bin \
+    && wget -q https://download-installer.cdn.mozilla.net/pub/firefox/releases/${FIREFOX_VERSION}/linux-x86_64/en-US/firefox-${FIREFOX_VERSION}.tar.bz2 -O - | tar xfj - -C /opt \
+    && ln -s /opt/firefox/firefox /usr/local/bin/firefox
+
+# Install development dependencies
+COPY --chown=superset:superset requirements/development.txt requirements/
+RUN --mount=type=cache,target=/root/.cache/pip \
+    apk add --no-cache build-base \
+    && pip install -r requirements/development.txt \
+    && apk del build-base
+
+USER superset
