@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports Test 2: COVID Vaccine Dashboard</title>
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+        .header {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .alert {
+            color: red;
+            font-weight: bold;
+        }
+        .optum-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e4002b;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #002677;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="header">[Superset] Reports Test 2: COVID Vaccine Dashboard</p>
+        <p class="alert">Caution: External email. Do not open attachments or click on links if you do not recognize the sender.</p>
+        <p class="optum-logo">Optum</p>
+        <p>Hello Athif Sheikh,</p>
+        <p>This is to inform you that the alert for Reports Test 2: COVID Vaccine Dashboard has been triggered from Analytics Center.</p>
+        <p><strong>ALERT DESCRIPTION:</strong></p>
+        <p>The description of reports.</p>
+        <div class="button-container">
+            <a href="https://bi.dev.analyticshub.healthcareit.net/superset/dashboard/f4065089-110a-4f1a-8dd7-98a65e250/?force=false" class="button">Go to Dashboard</a>
+        </div>
+        <p class="footer">You can also copy and paste this URL into the browser:<br>
+        <a href="https://bi.dev.analyticshub.healthcareit.net/superset/dashboard/f4065089-110a-4f1a-8dd7-98a65e250/?force=false">https://bi.dev.analyticshub.healthcareit.net/superset/dashboard/f4065089-110a-4f1a-8dd7-98a65e250/?force=false</a></p>
+    </div>
+</body>
+</html>
